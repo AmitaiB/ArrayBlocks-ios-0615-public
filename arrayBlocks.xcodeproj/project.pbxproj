@@ -14,6 +14,7 @@
 		317BBDC01A012AD400E50696 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 317BBDBF1A012AD400E50696 /* Images.xcassets */; };
 		317BBDC31A012AD400E50696 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 317BBDC11A012AD400E50696 /* LaunchScreen.xib */; };
 		317BBDCF1A012AD400E50696 /* arrayBlocksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 317BBDCE1A012AD400E50696 /* arrayBlocksTests.m */; };
+		381C4C071B4C7A6500D2801C /* NSArray+NSArray_MapNselect.m in Sources */ = {isa = PBXBuildFile; fileRef = 381C4C061B4C7A6500D2801C /* NSArray+NSArray_MapNselect.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		317BBDC81A012AD400E50696 /* arrayBlocksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = arrayBlocksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		317BBDCD1A012AD400E50696 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		317BBDCE1A012AD400E50696 /* arrayBlocksTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = arrayBlocksTests.m; sourceTree = "<group>"; };
+		381C4C051B4C7A6500D2801C /* NSArray+NSArray_MapNselect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+NSArray_MapNselect.h"; sourceTree = "<group>"; };
+		381C4C061B4C7A6500D2801C /* NSArray+NSArray_MapNselect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+NSArray_MapNselect.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,8 @@
 				317BBDB71A012AD400E50696 /* AppDelegate.m */,
 				317BBDB91A012AD400E50696 /* ViewController.h */,
 				317BBDBA1A012AD400E50696 /* ViewController.m */,
+				381C4C051B4C7A6500D2801C /* NSArray+NSArray_MapNselect.h */,
+				381C4C061B4C7A6500D2801C /* NSArray+NSArray_MapNselect.m */,
 				317BBDBC1A012AD400E50696 /* Main.storyboard */,
 				317BBDBF1A012AD400E50696 /* Images.xcassets */,
 				317BBDC11A012AD400E50696 /* LaunchScreen.xib */,
@@ -220,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				317BBDBB1A012AD400E50696 /* ViewController.m in Sources */,
+				381C4C071B4C7A6500D2801C /* NSArray+NSArray_MapNselect.m in Sources */,
 				317BBDB81A012AD400E50696 /* AppDelegate.m in Sources */,
 				317BBDB51A012AD400E50696 /* main.m in Sources */,
 			);
@@ -412,6 +418,7 @@
 				317BBDD41A012AD400E50696 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		317BBDD51A012AD400E50696 /* Build configuration list for PBXNativeTarget "arrayBlocksTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +427,7 @@
 				317BBDD71A012AD400E50696 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
