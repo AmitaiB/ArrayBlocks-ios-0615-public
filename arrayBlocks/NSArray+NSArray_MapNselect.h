@@ -10,7 +10,7 @@
 
 @interface NSArray (NSArray_MapNselect)
 
-- (void)mapWithOperation:(void (^)(id obj, NSUInteger idx))block;
+- (void)mapWithOperation:(void (^)(id obj))block;
 
 
 

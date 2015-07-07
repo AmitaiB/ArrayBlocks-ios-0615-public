@@ -11,8 +11,10 @@
 
 @implementation NSArray (NSArray_MapNselect)
 
-- (void)mapWithOperation:(void (^)(id obj, NSUInteger idx))block {
-    
+- (void)mapWithOperation:(void (^)(id obj))block {
+    for (id obj in self) {
+        block(obj);
+    }
 }
 
 @end

@@ -19,6 +19,22 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    NSArray *testArray = @[@1,@3,@5,@7,@9];
+    
+    __block NSMutableArray *newArray = [[NSMutableArray alloc] init];
+    
+    [testArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [newArray addObject:@([(NSNumber*)obj integerValue] * 3)];
+    }];
+    NSLog(@"My new array with enumerateObjectsUsingBlocks: %@", [newArray description]);
+    
+    [newArray removeAllObjects];
+    [testArray mapWithOperation:^(id obj) {
+        [newArray addObject:@([(NSNumber *)obj integerValue] * 3)]; 
+    }];
+    
+    NSLog(@"My new array with mapWithOperation: %@", [newArray description]);
+    
 }
 
 - (void)didReceiveMemoryWarning {
