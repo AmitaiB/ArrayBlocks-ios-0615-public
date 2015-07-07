@@ -19,22 +19,47 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    NSArray *testArray = @[@1,@3,@5,@7,@9];
+    NSArray *testArray = @[@1,@2,@3,@4,@5];
     
     __block NSMutableArray *newArray = [[NSMutableArray alloc] init];
     
+    
+#pragma mark - mapWithBlock
+        ///The base case, using the baked-in method:
     [testArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         [newArray addObject:@([(NSNumber*)obj integerValue] * 3)];
     }];
     NSLog(@"My new array with enumerateObjectsUsingBlocks: %@", [newArray description]);
     
+    
+        ///The test case, using our new category:
     [newArray removeAllObjects];
-    [testArray mapWithOperation:^(id obj) {
+    [testArray mapWithBlock:^(id obj) {
         [newArray addObject:@([(NSNumber *)obj integerValue] * 3)]; 
     }];
     
     NSLog(@"My new array with mapWithOperation: %@", [newArray description]);
     
+#pragma mark - selectWithBlock
+
+        ///The base case, using a filteredArrayUsingAPredicateThatWeGotFromABlockButSplitIntoTwoSeparateMethodCallsSoItWouldBeLessVerbose.
+    NSPredicate *evenPredicate = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+        return [evaluatedObject integerValue] % 2 == 0;
+    }];
+    
+    NSArray *filteredResultsArray = [testArray filteredArrayUsingPredicate:evenPredicate];
+    
+    NSLog(@"My filteredResultArray = %@", [filteredResultsArray description]);
+    
+        ///The test case, using our new category
+    NSArray *filteredResults = [testArray selectWithBlock:^BOOL(id obj) {
+        if ([(NSNumber *)obj integerValue] % 2 == 0) {
+            return YES; 
+        }
+        return NO;
+    }];
+    
+    NSLog(@"My filteredResults = %@", [filteredResults description]);
 }
 
 - (void)didReceiveMemoryWarning {

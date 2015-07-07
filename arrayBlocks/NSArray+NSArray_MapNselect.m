@@ -11,10 +11,20 @@
 
 @implementation NSArray (NSArray_MapNselect)
 
-- (void)mapWithOperation:(void (^)(id obj))block {
+- (void)mapWithBlock:(void (^)(id obj))block {
     for (id obj in self) {
         block(obj);
     }
+}
+
+- (NSArray *)selectWithBlock:(BOOL (^)(id obj))block {
+    NSMutableArray *outArray = [[NSMutableArray alloc] init];
+    for (id obj in self) {
+        if (block(obj)) {
+            [outArray addObject:obj];
+        }
+    }
+    return outArray;
 }
 
 @end
