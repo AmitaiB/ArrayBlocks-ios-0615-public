@@ -10,7 +10,7 @@
 
 @interface NSArray (NSArray_MapNselect)
 
-- (NSArray *)mapWithOperation:(id (^)(id))mappingBlock;
+- (NSArray *)mapWithOperation:(id (^)(id))block; ///Pass in the array? Make the block return void?
 
 
 //- (NSArray *)selectWithComparator:(id (^)(<#parameterTypes#>))<#blockName#>;

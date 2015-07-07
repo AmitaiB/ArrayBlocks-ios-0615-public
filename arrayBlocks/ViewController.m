@@ -25,14 +25,16 @@
 //    [randomNumbers1 mapWithOperation:^id(id obj, NSUInteger idx) {
 //        [(NSNumber*)obj integerValue] * 5;
 //    }];
-    
-    
+//    NSArray *randomNumbersMapped = [randomNumbers1 mapWithOperation:^id (id obj) {
+//        return [(NSNumber *)obj integerValue] *= 3;
+//    }];
+
     
     NSLog(@"My Array = \n%@", [randomNumbers1 description]);
     
-    
-    [randomNumbers2 enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-//        [(NSNumber*)obj integerValue] * 5;
+    __block NSMutableArray *results2 = [@[]mutableCopy];
+    [randomNumbers2 enumerateObjectsUsingBlock:^(NSNumber *obj, NSUInteger idx, BOOL *stop) {
+        results2[idx] = @([(NSNumber*)randomNumbers2 integerValue] * 3);
     }];
     
     NSLog(@"My Array = \n%@", [randomNumbers2 description]);

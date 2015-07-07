@@ -10,17 +10,27 @@
 
 @implementation NSArray (NSArray_MapNselect)
 
-- (NSArray *)mapWithOperation:(id (^)(id obj))operationBlock {
-    NSMutableArray *outputArray = [[NSMutableArray alloc] init];
-        for (NSUInteger i = 0; i < self.count; i++) {
-            
+- (NSArray *)mapWithOperation:(id (^)(id obj))block {
+    NSMutableArray *outputArray = [[NSMutableArray alloc]init];
+    for (id obj in self) {
+        [outputArray addObject:block(obj)];
+    }
+    
+//    for (NSUInteger i = 0; i < self.count; i++) {        
+//        outputArray[i] = [block(outputArray[i]) copy];
+//    }
+    
+    
+    
+//    for (NSUInteger i = 0; i < self.count; i++) {
+//            
 //            id (^mappingOutput)(id) = operationBlock
 //            (<#parameters#>) {<#code#>};
+//
+//            [outputArray addObject:[operationBlock copy]];
 
-            [outputArray addObject:[operationBlock copy]];
 
-
-    }
+    
     return [outputArray copy];
 }
 
